@@ -59,3 +59,63 @@ body.halimthemes {
 .slider-thumb:hover .icon_overlay {
   opacity: 0 !important;
 }
+/* .halim-showtime media screen min width 970  */
+@media screen and (min-width: 990px) {
+    .halim-showtime {
+        min-height: 100vh;
+    }
+}
+.halim-showtime .schedule-menu {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--bg-dark), #252525);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .5);
+}
+.halim-showtime .schedule-menu .schedule-item{
+    flex: 0 0 100px;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: all .4s ease;
+    min-width: 90px;
+
+}
+.halim-showtime .schedule-menu .schedule-item.active {
+    border-color: #0af;
+}
+.halim-showtime .schedule-menu .schedule-item.active:before {
+    opacity: .2;
+}
+.halim-showtime .schedule-menu .schedule-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0af, #ff007a);
+    opacity: 0;
+    border-radius: 8px;
+    transition: opacity .4s ease;
+    z-index: 0;
+}
+.halim-showtime .schedule-menu .schedule-item:hover {
+    border-color: #0af;
+}
+.halim-showtime .schedule-menu .schedule-item a{
+    color: #ccc;
+}
+

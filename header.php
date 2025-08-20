@@ -91,11 +91,15 @@
                         <?php if ( is_user_logged_in() ) : ?>
     <!-- Nội dung khi user đã đăng nhập -->
     <a href="<?php echo wp_logout_url(home_url()); ?>">
+        
+        <i class="hl-off" style="color:red; "></i>
 <?php else : ?>
     <!-- Nội dung khi user chưa đăng nhập -->
     <a href="javascript:void(0);" onclick="openLoginModal();">
+        <i class="hl-user" ></i>
 <?php endif; ?>
-                            <i class="hl-user"></i>
+                            
+                            
                             </a>
                         </div>
                     </div>
