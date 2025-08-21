@@ -1,24 +1,30 @@
 <?php
 // Include file widget
 include_once get_stylesheet_directory() . '/includes/widgets/child-halim-popular-tab-widget.php';
+include_once get_stylesheet_directory() . '/includes/widgets/chill-halim-carousel.php';
 
 /**
  * Ghi đè widget parent và đăng ký widget child
  */
-function child_override_parent_widget() {
+function child_override_parent_widget()
+{
     // Gỡ widget parent nếu tồn tại
-    if ( class_exists('halim_tab_popular_Widget') ) {
+    if (class_exists('halim_tab_popular_Widget')) {
         unregister_widget('halim_tab_popular_Widget');
+    }
+    if (class_exists('HaLim_Carousel_Slider_Widget')) {
+        unregister_widget('HaLim_Carousel_Slider_Widget');
     }
     // Đăng ký widget child
     register_widget('child_halim_tab_popular_Widget');
+    register_widget('HaLim_Carousel_Slider_Widget_Chill');
 }
 add_action('widgets_init', 'child_override_parent_widget', 15);
-
 /**
  * Active widget child vào sidebar mặc định khi active theme
  */
-function child_activate_popular_widget() {
+function child_activate_popular_widget()
+{
     $sidebars = get_option('sidebars_widgets');
     $widget_id = 'child_halim_tab_popular_widget-1'; // chú ý ID widget
 
