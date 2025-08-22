@@ -28,6 +28,15 @@
     color: #a7a7a7;
     font-weight: 700;
 }
+@media (max-width: 576px) {
+    .movie_info .head .last > div > div:first-child {
+    display: none;
+}
+.movie_info .head .last > div > div {
+    flex: 1 !important;
+
+}
+}
 .info-movie .head .last > div > div:last-child {
     font-weight: 500;
     color: #a7a7a7;
@@ -84,6 +93,16 @@
     color: #f5c518;
     font-size: 20px;
     margin-right: 5px;
+}
+.ratings_wrapper .halim_imdbrating{
+    align-items: center;
+    color: #fff;
+    display: flex;
+}
+.ratings_wrapper .halim_imdbrating::before,
+.ratings_wrapper .halim_imdbrating .score
+{
+    font-size: 15px !important;
 }
 .halim-rating-button {
     background: linear-gradient(135deg, #3a47d5, #00d2ff);
@@ -143,22 +162,27 @@
 .fw-500 {
     font-weight: 500;
 }
-.halim-server.show_all_eps ul.halim-list-eps {
+#halim-list-server .tab-content {
     background: #3333334a !important;
     padding: 5px !important;
     border-radius: 3px;
     max-height: 265px;
     overflow-y: auto;
 }
-
 #halim-list-server .halim-server.show_all_eps .halim-server-name {
-    float: none !important;
     margin-bottom: 5px !important;
     background: #0b0f15;
     padding: 8px 10px 5px;
     color: #ea9b06;
     font-weight: 700;
     text-transform: uppercase;
+}
+#halim-list-server .halim-list-eps{
+    background: #3333334a !important;
+    padding: 5px !important;
+    border-radius: 3px;
+    max-height: 265px;
+    overflow-y: auto;
 }
 #halim-list-server ul li span {
     background: #333;

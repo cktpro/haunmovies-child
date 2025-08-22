@@ -3,7 +3,7 @@
  *  Filter tpl
  */
 ?>
-<div class="halim-panel-filter">
+<!-- <div class="halim-panel-filter">
     <div class="panel-heading">
         <div class="row">
             <div class="<?php echo cs_get_option('disable_filter_movie') == true ? 'col-xs-12' : 'col-xs-8'; ?> hidden-xs">
@@ -35,5 +35,6 @@
 	<div id="ajax-filter" class="panel-collapse collapse" aria-expanded="true" role="menu">
         <div class="ajax"></div>
     </div>
-</div><!-- end panel-default -->
+</div> -->
+<!-- end panel-default -->
 

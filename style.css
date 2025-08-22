@@ -5,12 +5,11 @@
  Author:       Your Name
  Author URI:   https://yourdomain.com
  Template:     haunmovies
- Version:      1.0.0
+ Version:      1.0.1
  Text Domain:  haunmovies-child
 */
 
-/* Import CSS từ theme cha */
-@import url('../haunmovies/style.css');
+
 
 /* Style tuỳ chỉnh viết thêm ở dưới */
 body {
@@ -22,6 +21,9 @@ body.halimthemes,
 #footer .footer-logo,
 #footer .about,
 .footer-credit {
+    background: #1c1c1c !important;
+}
+#header{
     background: #1c1c1c !important;
 }
 #headwrap .nav-items a {

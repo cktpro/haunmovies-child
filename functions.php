@@ -170,7 +170,7 @@ function mytheme_enqueue_global_css()
         'mytheme-global-style', // Handle
         get_stylesheet_directory_uri() . '/assets/css/movie-tpl2.css', // Đường dẫn file CSS
         array(), // Dependencies
-        '1.0',  // Version
+        '1.48888',  // Version
         'all'   // Media
     );
 }
