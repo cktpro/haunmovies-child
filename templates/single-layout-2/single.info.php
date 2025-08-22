@@ -114,7 +114,7 @@ if ($trailer != '') {
             </div>
         </div>
 
-        <div class="movie-poster col-md-4">
+        <!-- <div class="movie-poster col-md-4">
             <img class="movie-thumb" src="<?php echo halim_image_display('movie-thumb'); ?>" alt="<?php the_title() ?>">
             <?php if ($trailer_url): ?>
                 <span id="show-trailer" data-url="<?php echo $trailer_url; ?>" class="btn btn-sm btn-primary show-trailer">
@@ -148,7 +148,7 @@ if ($trailer != '') {
             <?php endif; ?>
 
 
-        </div>
+        </div> -->
 
         <!-- <div class="film-poster col-md-8">
             <div class="movie-detail">
