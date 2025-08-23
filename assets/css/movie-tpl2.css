@@ -1,473 +1,580 @@
 .movie_info .head {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  border-radius: 0 !important;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border-radius: 0 !important;
 }
 .movie_info .head .first {
-  width: 25%;
-  padding: 5px;
-  background: #000;
+    width: 25%;
+    padding: 5px;
+    background: #000;
 }
 .movie_info .head img {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 }
 .movie_info .head .last {
-  margin-left: 10px;
-  width: 81%;
+    margin-left: 10px;
+    width: 81%;
 }
 .movie_info .head .last > div {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid #1e2838;
-  padding: 6px;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #1e2838;
+    padding: 6px;
 }
 .movie_info .head .last > div > div:first-child {
-  flex: 0.2;
-  color: #a7a7a7;
-  font-weight: 700;
+    flex: 0.2;
+    color: #a7a7a7;
+    font-weight: 700;
 }
 @media (max-width: 576px) {
-  .movie_info .head .last > div > div:first-child {
-    display: none;
-  }
-  .movie_info .head .last > div > div {
-    flex: 1 !important;
-  }
+    .movie_info .head .last > div > div:first-child {
+        display: none;
+    }
+    .movie_info .head .last > div > div {
+        flex: 1 !important;
+    }
 }
 .info-movie .head .last > div > div:last-child {
-  font-weight: 500;
-  color: #a7a7a7;
+    font-weight: 500;
+    color: #a7a7a7;
 }
 
 .movie_info .head .last > div > div {
-  padding: 10px 5px;
-  flex: 0.8;
-  color: #a7a7a7;
+    padding: 10px 5px;
+    flex: 0.8;
+    color: #a7a7a7;
 }
 .movie_name {
-  font-size: 17px;
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-  color: #cf8e19;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    color: #cf8e19;
 }
 .movie_info .head .last > div.list_cate a {
-  background: rgb(255, 255, 255, 0.15) !important;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 2px;
-  display: inline-flex;
-  color: #efefef;
+    background: rgb(255, 255, 255, 0.15) !important;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+    display: inline-flex;
+    color: #efefef;
 }
 .new-ep {
-  padding: 3px 7px 3px;
-  color: #fff;
-  background-size: 300% 100%;
-  background-image: linear-gradient(to right, #25aae1, #043ea5, #04befe, #3f86ed);
-  border-radius: 3px;
-  font-size: 12px;
-  text-transform: capitalize;
+    padding: 3px 7px 3px;
+    color: #fff;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, #25aae1, #043ea5, #04befe, #3f86ed);
+    border-radius: 3px;
+    font-size: 12px;
+    text-transform: capitalize;
 }
 .released a {
-  margin: 0 1px;
+    margin: 0 1px;
 }
 .halim-rating-container {
-  align-items: center;
-  background-color: #1111118a;
-  border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  margin: 10px 0;
-  padding: 8px 12px;
+    align-items: center;
+    background-color: #1111118a;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 8px 12px;
 }
 .halim-star-rating {
-  align-items: center;
-  color: #fff;
-  display: flex;
-  font-size: 15px;
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-size: 15px;
 }
 .halim-star-icon {
-  color: #f5c518;
-  font-size: 20px;
-  margin-right: 5px;
+    color: #f5c518;
+    font-size: 20px;
+    margin-right: 5px;
 }
 .ratings_wrapper .halim_imdbrating {
-  align-items: center;
-  color: #fff;
-  display: flex;
+    align-items: center;
+    color: #fff;
+    display: flex;
 }
 .ratings_wrapper .halim_imdbrating::before,
 .ratings_wrapper .halim_imdbrating .score {
-  font-size: 15px !important;
+    font-size: 15px !important;
 }
 .halim-rating-button {
-  background: linear-gradient(135deg, #3a47d5, #00d2ff);
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 5px 15px;
-  transition: all 0.2s ease;
+    background: linear-gradient(135deg, #3a47d5, #00d2ff);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 15px;
+    transition: all 0.2s ease;
 }
-.halim-rating-votes {
-  font-size: 14px !important;
-  margin-left: 5px;
-  opacity: 0.7;
+.halim-rating-votes,
+.halim-rating-votes .rating-votes {
+    font-size: 14px !important;
+    margin-left: 5px;
+    opacity: 0.7;
 }
 .halim-rating-max {
-  opacity: 0.8;
-  font-size: 15px !important;
+    opacity: 0.8;
+    font-size: 15px !important;
 }
 .halim-rating-slash {
-  margin: 0 2px;
-  opacity: 0.8;
+    margin: 0 2px;
+    opacity: 0.8;
 }
 .ah-frame-bg {
-  background: rgba(0, 0, 0, 0.075) !important;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.075) !important;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 .flex-1 {
-  flex: 1;
+    flex: 1;
 }
 .bg-lochinvar {
-  transition: all 0.4s ease-in-out;
-  background-image: linear-gradient(to right, #fb0, #e43603, #ff6290, #ff5000);
-  background-size: 300% 100%;
+    transition: all 0.4s ease-in-out;
+    background-image: linear-gradient(to right, #fb0, #e43603, #ff6290, #ff5000);
+    background-size: 300% 100%;
 }
 .button-default {
-  background-color: #6b6a6a;
-  display: inline-flex;
-  border-radius: 5px;
-  white-space: nowrap;
-  margin-right: 5px;
-  align-items: center;
-  padding: 6px 10px;
-  cursor: pointer;
-  color: #fff;
+    background-color: #6b6a6a;
+    display: inline-flex;
+    border-radius: 5px;
+    white-space: nowrap;
+    margin-right: 5px;
+    align-items: center;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: #fff;
 }
 
 .button-default:hover {
-  color: #fff;
-  opacity: 0.7; /* Màu nền khi hover */ /* Hiệu ứng hover nhẹ */
+    color: #fff;
+    opacity: 0.7; /* Màu nền khi hover */ /* Hiệu ứng hover nhẹ */
 }
 .fw-500 {
-  font-weight: 500;
+    font-weight: 500;
 }
 #halim-list-server .tab-content {
-  background: #3333334a !important;
-  padding: 5px !important;
-  border-radius: 3px;
-  max-height: 265px;
-  overflow-y: auto;
+    background: #3333334a !important;
+    padding: 5px !important;
+    border-radius: 3px;
+    max-height: 265px;
+    overflow-y: auto;
 }
 #halim-list-server .halim-server.show_all_eps .halim-server-name {
-  margin-bottom: 5px !important;
-  background: #0b0f15;
-  padding: 8px 10px 5px;
-  color: #ea9b06;
-  font-weight: 700;
-  text-transform: uppercase;
+    margin-bottom: 5px !important;
+    background: #0b0f15;
+    padding: 8px 10px 5px;
+    color: #ea9b06;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 #halim-list-server .halim-list-eps {
-  background: #3333334a !important;
-  padding: 5px !important;
-  border-radius: 3px;
-  max-height: 265px;
-  overflow-y: auto;
+    background: #3333334a !important;
+    padding: 5px !important;
+    border-radius: 3px;
+    max-height: 265px;
+    overflow-y: auto;
 }
 #halim-list-server ul li span {
-  background: #333;
-  border-radius: 3px;
-  transition: 0.6s all;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 0.7rem;
-  padding: 6px 10px;
+    background: #333;
+    border-radius: 3px;
+    transition: 0.6s all;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.7rem;
+    padding: 6px 10px;
 }
 #halim-list-server ul li span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 #halim-list-server li:hover span {
-  background: linear-gradient(to right, #1a2980, #26d0ce);
+    background: linear-gradient(to right, #1a2980, #26d0ce);
 }
 #halim-list-server li {
-  text-align: center;
-  padding-left: 6px !important;
-  padding-right: 6px !important;
-  margin: 0 !important;
-  width: 25%;
-  float: left;
-  box-sizing: border-box;
-  padding-right: 15px;
-  padding-left: 15px;
+    text-align: center;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    margin: 0 !important;
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 .entry-content-child {
-  background: #292929 !important;
-  border: 1px solid #1d2731a6 !important;
+    background: #292929 !important;
+    border: 1px solid #1d2731a6 !important;
 }
 .the_tag_list {
-  border: unset;
+    border: unset;
 }
 .the_tag_list a {
-  background-image: unset !important;
-  font-size: 13px !important;
+    background-image: unset !important;
+    font-size: 13px !important;
 }
 /* Small devices (sm ≥576px) */
 
 /* Large devices (lg ≥992px) */
 @media (min-width: 992px) {
-  #halim-list-server li {
-    width: 16.666667%; /* 1/12 cột ≈ 8.33% */
-    float: left;
-    box-sizing: border-box;
-    padding-right: 15px;
-    padding-left: 15px;
-  }
+    #halim-list-server li {
+        width: 16.666667%; /* 1/12 cột ≈ 8.33% */
+        float: left;
+        box-sizing: border-box;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 }
 .halim_showtime_movies {
-  background-color: #232323;
-  background-position: 10px;
-  background-repeat: no-repeat;
-  background-size: 25px;
-  color: #bdbdbd;
-  font-size: 13.5px;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  padding: 10px 15px 10px 45px;
+    background-color: #232323;
+    background-position: 10px;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    color: #bdbdbd;
+    font-size: 13.5px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding: 10px 15px 10px 45px;
 }
 /* Đánh giá */
 .movie-rating-modal-overlay {
-  align-items: center;
-  backdrop-filter: blur(5px);
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
 }
 
 .movie-rating-modal-overlay:not(.active) {
-  display: none;
+    display: none;
 }
 
 .movie-rating-modal {
-  animation: movie-rating-modalAppear 0.4s ease-out;
-  background: linear-gradient(135deg, #1a1f38, #2d3250);
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  font-family: Montserrat, sans-serif;
-  max-width: 600px;
-  overflow: hidden;
-  transform: translateY(0);
-  width: 100%;
+    animation: movie-rating-modalAppear 0.4s ease-out;
+    background: linear-gradient(135deg, #1a1f38, #2d3250);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    font-family: Montserrat, sans-serif;
+    max-width: 600px;
+    overflow: hidden;
+    transform: translateY(0);
+    width: 100%;
 }
 
 .movie-rating-modal-header {
-  background: linear-gradient(135deg, #3a1c71, #d76d77 50%, #ffaf7b);
-  padding: 30px 25px;
-  position: relative;
-  text-align: center;
+    background: linear-gradient(135deg, #3a1c71, #d76d77 50%, #ffaf7b);
+    padding: 30px 25px;
+    position: relative;
+    text-align: center;
 }
 
 .movie-rating-modal-close {
-  align-items: center;
-  background-color: hsla(0, 0%, 100%, 0.2);
-  border: none;
-  border-radius: 50%;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  font-size: 16px;
-  height: 30px;
-  justify-content: center;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  transition: all 0.2s;
-  width: 30px;
+    align-items: center;
+    background-color: hsla(0, 0%, 100%, 0.2);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    height: 30px;
+    justify-content: center;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all 0.2s;
+    width: 30px;
 }
 
 .movie-rating-modal-close:hover {
-  background-color: hsla(0, 0%, 100%, 0.3);
-  transform: rotate(90deg);
+    background-color: hsla(0, 0%, 100%, 0.3);
+    transform: rotate(90deg);
 }
 
 .movie-rating-movie-title {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .movie-rating-movie-rating {
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  color: #fff;
-  display: inline-flex;
-  font-size: 14px;
-  padding: 8px 15px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    color: #fff;
+    display: inline-flex;
+    font-size: 14px;
+    padding: 8px 15px;
 }
 
 .movie-rating-rating-icon {
-  color: gold;
-  font-size: 18px;
-  margin-right: 8px;
+    color: gold;
+    font-size: 18px;
+    margin-right: 8px;
 }
 
 .movie-rating-modal-body {
-  padding: 25px;
+    padding: 25px;
 }
 
 .movie-rating-rating-title {
-  color: hsla(0, 0%, 100%, 0.9);
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  text-align: center;
+    color: hsla(0, 0%, 100%, 0.9);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .movie-rating-rating-options {
-  display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  margin-bottom: 30px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    margin-bottom: 30px;
 }
 
 .movie-rating-rating-option {
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 16px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 15px 10px;
-  position: relative;
-  transition: all 0.3s;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 15px 10px;
+    position: relative;
+    transition: all 0.3s;
 }
 
 .movie-rating-rating-option:hover {
-  background-color: hsla(0, 0%, 100%, 0.1);
-  transform: translateY(-5px);
+    background-color: hsla(0, 0%, 100%, 0.1);
+    transform: translateY(-5px);
 }
 
 .movie-rating-rating-option.selected {
-  background: linear-gradient(135deg, #3a47d5, #00d2ff);
-  box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
-  transform: translateY(-5px);
+    background: linear-gradient(135deg, #3a47d5, #00d2ff);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+    transform: translateY(-5px);
 }
 
 .movie-rating-rating-option.selected:before {
-  animation: movie-rating-shimmer 2s infinite;
-  background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.8), transparent);
-  content: '';
-  height: 3px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+    animation: movie-rating-shimmer 2s infinite;
+    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.8), transparent);
+    content: '';
+    height: 3px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .movie-rating-rating-option img {
-  border-radius: 50%;
-  filter: drop-shadow(0 5px 10px rgb(0 0 0/0.2));
-  height: 50px;
-  margin-bottom: 10px;
-  transition: all 0.3s;
-  width: 50px;
+    border-radius: 50%;
+    filter: drop-shadow(0 5px 10px rgb(0 0 0/0.2));
+    height: 50px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+    width: 50px;
 }
 
 .movie-rating-rating-option.selected img {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .movie-rating-rating-option-text {
-  color: hsla(0, 0%, 100%, 0.9);
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
+    color: hsla(0, 0%, 100%, 0.9);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
 }
 
 .movie-rating-rating-option.selected .movie-rating-rating-option-text {
-  color: #fff;
-  font-weight: 600;
+    color: #fff;
+    font-weight: 600;
 }
 
 .movie-rating-modal-footer {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  padding: 0 25px 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 0 25px 25px;
 }
 
 .movie-rating-btn {
-  align-items: center;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  display: flex;
-  flex: 0 1 auto;
-  font-size: 16px;
-  font-weight: 600;
-  justify-content: center;
-  min-width: 120px;
-  padding: 12px 25px;
-  transition: all 0.3s;
+    align-items: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex: 0 1 auto;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    min-width: 120px;
+    padding: 12px 25px;
+    transition: all 0.3s;
 }
 
 .movie-rating-btn-primary {
-  background: linear-gradient(135deg, #f96, #ff5e62);
-  box-shadow: 0 10px 20px rgba(255, 94, 98, 0.3);
-  color: #fff;
+    background: linear-gradient(135deg, #f96, #ff5e62);
+    box-shadow: 0 10px 20px rgba(255, 94, 98, 0.3);
+    color: #fff;
 }
 
 .movie-rating-btn-primary:hover {
-  box-shadow: 0 15px 25px rgba(255, 94, 98, 0.4);
-  transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(255, 94, 98, 0.4);
+    transform: translateY(-3px);
 }
 
 .movie-rating-btn-primary:active {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .movie-rating-btn-secondary {
-  background-color: hsla(0, 0%, 100%, 0.1);
-  color: #fff;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    color: #fff;
 }
 
 .movie-rating-btn-secondary:hover {
-  background-color: hsla(0, 0%, 100%, 0.15);
+    background-color: hsla(0, 0%, 100%, 0.15);
 }
 
 .halim-rating-button {
-  background: linear-gradient(135deg, #3a47d5, #00d2ff);
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 5px 15px;
-  transition: all 0.2s ease;
+    background: linear-gradient(135deg, #3a47d5, #00d2ff);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 15px;
+    transition: all 0.2s ease;
 }
 .halim-rating-button:hover {
-  box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
-  transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.4);
+    transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+    .halim-rating-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .halim-star-rating {
+        margin-bottom: 0;
+    }
+
+    .halim-rating-button {
+        margin-left: auto;
+    }
+
+    .movie-rating-modal {
+        max-width: 450px;
+        width: 98%;
+    }
+
+    .movie-rating-modal-header {
+        padding: 20px 15px;
+    }
+
+    .movie-rating-movie-title {
+        font-size: 20px;
+    }
+
+    .movie-rating-movie-rating {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .movie-rating-modal-body {
+        padding: 20px 15px;
+    }
+
+    .movie-rating-rating-title {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .movie-rating-rating-options {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .movie-rating-rating-option {
+        padding: 10px 8px;
+    }
+
+    .movie-rating-modal-footer {
+        gap: 10px;
+        padding: 0 15px 20px;
+    }
+
+    .movie-rating-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .halim-rating-container {
+        padding: 6px 10px;
+    }
+
+    .halim-star-icon {
+        font-size: 18px;
+    }
+
+    .halim-rating-score {
+        font-size: 16px;
+    }
+
+    .halim-rating-button {
+        font-size: 13px;
+        padding: 6px 15px;
+    }
+
+    .movie-rating-modal {
+        max-width: 400px;
+        width: 98%;
+    }
+
+    .movie-rating-rating-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movie-rating-rating-option {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .movie-rating-rating-option img {
+        height: 35px;
+        margin-bottom: 0;
+        margin-right: 10px;
+        width: 35px;
+    }
+
+    .movie-rating-rating-option-text {
+        font-size: 13px;
+        text-align: left;
+    }
 }

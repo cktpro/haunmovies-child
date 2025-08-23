@@ -106,8 +106,7 @@ if ($trailer != '') {
                                     lượt)</span>
                             </div> -->
                             <?php echo halim_get_user_rate() ?>
-                            <button type="button" class="halim-rating-button" data-post-id="1183" data-rating="4.15"
-                                data-votes="14018" data-title="Thần Ấn Vương Tọa">Đánh Giá</button>
+                            <button type="button" class="halim-rating-button">Đánh Giá</button>
                         </div>
                     </div>
                 </div>
@@ -205,18 +204,18 @@ if ($trailer != '') {
             $watch_url = cs_get_option('watch_btn_display') == 'first_episode' ? halim_get_first_episode_link($post->ID) : halim_get_last_episode_link($post->ID);
         ?>
         <div class="flex flex-wrap flex-1"> <a href="<?php echo $watch_url; ?>"
-                class="button-default fw-500 fs-15 flex flex-hozi-center bg-lochinvar watch-btn"><i class="fa-solid fa-circle-play"></i>Xem Phim </a></div>
+                class="button-default fw-500 fs-15 flex flex-hozi-center bg-lochinvar watch-btn"><i
+                    class="fa-solid fa-circle-play"></i>Xem Phim </a></div>
         <div class="last">
 
-            <div id="bookmark4" class="button-default fw-500 fs-15 flex flex-hozi-center bg-lochinvar">
-                <i class="fa-solid fa-bookmark"></i>
-                <div id="bookmark4" ddata-action="follow" data-placement="right" data-post_id="<?php echo $post->ID; ?>"
-                    data-thumbnail="<?php echo esc_url(halim_image_display()) ?>" data-href="<?php the_permalink(); ?>"
-                    data-title="<?php echo $post->post_title; ?>" data-date="<?php echo $date; ?>">
-                    Theo dõi
-                </div>
-                <!-- <div class="follow-btn">Theo Dõi</div> -->
+            <div id="bookmark4" class="button-default fw-500 fs-15 flex flex-hozi-center bg-lochinvar"
+                data-action="follow" data-placement="right" data-post_id="<?php echo $post->ID; ?>"
+                data-thumbnail="<?php echo esc_url(halim_image_display()) ?>" data-href="<?php the_permalink(); ?>"
+                data-title="<?php echo $post->post_title; ?>" data-date="<?php echo $date; ?>">
+                <i class="fa-solid fa-bookmark"></i> Theo dõi
             </div>
+            <!-- <div class="follow-btn">Theo Dõi</div> -->
+
         </div>
     </div>
 </div>
@@ -275,52 +274,57 @@ if (isset($meta['halim_showtime_movies']) && $meta['halim_showtime_movies'] != '
 
 <?php
 
-if (comments_open() || get_comments_number()) : ?>
-        <div class="entry-content-child htmlwrap clearfix">
-        <?php echo comments_template()  ; ?>
-     </div>
-
-<?php  endif ?>
-    <div class="movie-rating-modal-overlay" id="ratingModal" data-post-id="<?php the_ID(); ?>">
-                <div class="movie-rating-modal">
-                    <div class="movie-rating-modal-header">
-                        <button class="movie-rating-modal-close close-modal-rating">✕</button>
-                        <h2 class="movie-rating-movie-title"> <?php the_title()  ?></h2>
-                        <div class="movie-rating-movie-rating">
-                            <span class="movie-rating-rating-icon">★</span>
-                            <span><span class="total-rating">0</span> / <span class="total-vote">0</span> lượt đánh
-                            giá</span>
-                        </div>
-                    </div>
-                    <div class="movie-rating-modal-body">
-                        <h3 class="movie-rating-rating-title">Bạn đánh giá phim này thế nào?</h3>
-                        <div class="movie-rating-rating-options" id="ratingOptions">
-                            <div class="movie-rating-rating-option" data-value="5">
-                                <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-5.webp" alt="Đỉnh nóc">
-                                <span class="movie-rating-rating-option-text">Đỉnh nóc</span>
-                            </div>
-                            <div class="movie-rating-rating-option" data-value="4">
-                                <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-4.webp" alt="Hay ho">
-                                <span class="movie-rating-rating-option-text">Hay ho</span>
-                            </div>
-                            <div class="movie-rating-rating-option" data-value="3">
-                                <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-3.webp" alt="Tạm ổn">
-                                <span class="movie-rating-rating-option-text">Tạm ổn</span>
-                            </div>
-                            <div class="movie-rating-rating-option" data-value="2">
-                                <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-2.webp" alt="Nhạt nhòa">
-                                <span class="movie-rating-rating-option-text">Nhạt nhòa</span>
-                            </div>
-                            <div class="movie-rating-rating-option" data-value="1">
-                                <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-1.webp" alt="Thảm họa">
-                                <span class="movie-rating-rating-option-text">Thảm họa</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="movie-rating-modal-footer">
-                        <button class="movie-rating-btn movie-rating-btn-primary" id="submitRatingBtn">Gửi đánh giá</button>
-                        <button class="movie-rating-btn movie-rating-btn-secondary close-modal-rating">Đóng</button>
-                    </div>
-                </div>
+if (comments_open() || get_comments_number()): ?>
+    <div class="entry-content-child htmlwrap clearfix">
+        <?php echo comments_template(); ?>
     </div>
+
+<?php endif ?>
+<div class="movie-rating-modal-overlay" id="ratingModal" data-post-id="<?php the_ID(); ?>">
+    <div class="movie-rating-modal">
+        <div class="movie-rating-modal-header">
+            <button class="movie-rating-modal-close close-modal-rating">✕</button>
+            <h2 class="movie-rating-movie-title"> <?php the_title() ?></h2>
+            <div class="movie-rating-movie-rating">
+                <span class="movie-rating-rating-icon">★</span>
+                <span><span class="total-rating">0</span> / <span class="total-vote">0</span> lượt đánh
+                    giá</span>
+            </div>
+        </div>
+        <div class="movie-rating-modal-body">
+            <h3 class="movie-rating-rating-title">Bạn đánh giá phim này thế nào?</h3>
+            <div class="movie-rating-rating-options" id="ratingOptions">
+                <div class="movie-rating-rating-option" data-value="5">
+                    <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-5.webp"
+                        alt="Đỉnh nóc">
+                    <span class="movie-rating-rating-option-text">Đỉnh nóc</span>
+                </div>
+                <div class="movie-rating-rating-option" data-value="4">
+                    <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-4.webp"
+                        alt="Hay ho">
+                    <span class="movie-rating-rating-option-text">Hay ho</span>
+                </div>
+                <div class="movie-rating-rating-option" data-value="3">
+                    <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-3.webp"
+                        alt="Tạm ổn">
+                    <span class="movie-rating-rating-option-text">Tạm ổn</span>
+                </div>
+                <div class="movie-rating-rating-option" data-value="2">
+                    <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-2.webp"
+                        alt="Nhạt nhòa">
+                    <span class="movie-rating-rating-option-text">Nhạt nhòa</span>
+                </div>
+                <div class="movie-rating-rating-option" data-value="1">
+                    <img src="https://dongphymm.net/wp-content/themes/hhtqvietsub/assets/images/rate-1.webp"
+                        alt="Thảm họa">
+                    <span class="movie-rating-rating-option-text">Thảm họa</span>
+                </div>
+            </div>
+        </div>
+        <div class="movie-rating-modal-footer">
+            <button class="movie-rating-btn movie-rating-btn-primary" id="submitRatingBtn">Gửi đánh giá</button>
+            <button class="movie-rating-btn movie-rating-btn-secondary close-modal-rating">Đóng</button>
+        </div>
+    </div>
+</div>
 <?php do_action('halim_after_single_content', $post->ID); ?>
