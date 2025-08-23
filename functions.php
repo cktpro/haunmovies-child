@@ -6,7 +6,10 @@ function haunmovies_child_enqueue_styles()
     wp_enqueue_style('haunmovies-style', get_template_directory_uri() . '/style.css');
 
     // CSS của theme con (ghi đè theme cha)
-    wp_enqueue_style('haunmovies-child-style', get_stylesheet_directory_uri() . '/style.css', array('haunmovies-style'));
+    wp_enqueue_style('haunmovies-child-style', get_stylesheet_directory_uri() . '/style.css', array('haunmovies-style'), '1.0.8', 'all');
+    wp_enqueue_style('font-awesome','https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css',array(),'6.5.0');
+    wp_enqueue_style('template-2-style',get_stylesheet_directory_uri() . '/assets/css/movie-tpl2.css',array(),'1.577777','all');
+    wp_enqueue_style('movie-style',get_stylesheet_directory_uri() . '/assets/css/top-movies.css',array(),'1.0.67','all');
 
 }
 add_action('wp_enqueue_scripts', 'haunmovies_child_enqueue_styles');
@@ -38,6 +41,19 @@ function haunmovies_child_create_page()
             ));
             if ($new_page_id) {
                 update_post_meta($new_page_id, '_wp_page_template', 'pages/page-history.php');
+            }
+        }
+        if (!isset(get_page_by_title('Top 10 Phim')->ID)) {
+            $new_page_id = wp_insert_post(array(
+                'post_type' => 'page',
+                'post_title' => 'Top 10 Phim',
+                'post_content' => 'Top 10 phim hay nhất',
+                'post_status' => 'publish',
+                'post_author' => 1,
+                'post_name'=> 'bxh-movies',
+            ));
+            if ($new_page_id) {
+                update_post_meta($new_page_id, '_wp_page_template', 'pages/page-top10-movies.php');
             }
         }
         if (!isset(get_page_by_title('Lịch chiếu phim')->ID)) {
@@ -164,14 +180,35 @@ add_filter('show_admin_bar', function ($show) {
     }
     return $show; // giữ admin bar ở backend
 });
-function mytheme_enqueue_global_css()
-{
-    wp_enqueue_style(
-        'mytheme-global-style', // Handle
-        get_stylesheet_directory_uri() . '/assets/css/movie-tpl2.css', // Đường dẫn file CSS
-        array(), // Dependencies
-        '1.48888',  // Version
-        'all'   // Media
-    );
-}
-add_action('wp_enqueue_scripts', 'mytheme_enqueue_global_css');
+add_filter('walker_nav_menu_start_el', function($item_output, $item, $depth, $args) {
+
+    // Lấy slug của page/post
+    $slug = basename(get_permalink($item->object_id));
+
+    // Danh sách slug và icon tương ứng
+    $icons = [
+        'lich-chieu'   => 'fa-solid fa-calendar-days',
+        'completed'    => 'fa-regular fa-circle-check',
+        'bxh-movies'  => 'fa-solid fa-trophy'
+    ];
+    $menu_path = trim($item->url, '/');
+
+    // Lấy path trang chủ (thường rỗng)
+    $home_path = trim(parse_url(home_url(), PHP_URL_PATH), '/');
+
+    if ($menu_path === $home_path) {
+        // Chèn icon FA ngay trước nội dung <a>
+        $item_output = preg_replace(
+            '/(<a\b[^>]*>)(.*?)(<\/a>)/i',
+            '$1<i class="fa-solid fa-house"></i> $2$3',
+            $item_output
+        );
+    }
+    if (isset($icons[$slug])) {
+        // Chỉ thay nội dung <a> hiển thị, không động vào title attribute
+        $item_output = '<a href="' . esc_url($item->url) . '"><i class="' . esc_attr($icons[$slug]) . '"></i> ' . esc_html($item->title) . '</a>';
+    }
+
+    return $item_output;
+
+}, 10, 4);

