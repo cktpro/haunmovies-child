@@ -84,20 +84,17 @@ class HaLim_Carousel_Slider_Widget_Chill extends WP_Widget
                         $post_id = get_the_ID();
                         $title = get_the_title();
                         $permalink = get_permalink();
-                        $thumbnail = get_the_post_thumbnail_url($post_id, 'medium'); // size: medium, large, full
+                        $thumbnail = get_the_post_thumbnail_url($post_id, 'full'); // size: medium, large, full
                         $alt = esc_attr($title);
-
                         // Custom field (nếu có meta 'status' hoặc 'episode')
-                        $status = get_post_meta($post_id, 'status', true) ?: 'Vietsub - HD';
-                        $episode = get_post_meta($post_id, 'episode', true) ?: 'Tập ?';
                         ?>
                         <article class="thumb grid-item post-<?php echo $post_id; ?>">
                             <div class="halim-item">
                                 <a class="halim-thumb" href="<?php echo $permalink; ?>" title="<?php echo esc_attr($title); ?>">
                                     <figure class="<?php echo $class; ?>">
                                         <div class="halim-trending-poster-mask halim-trending-<?php echo $class ?>"></div>
-                                        <img class="blur-up img-responsive lazyautosizes lazyloaded" src="<?php echo $thumbnail; ?>"
-                                            alt="<?php echo $alt; ?>" title="<?php echo $alt; ?>">
+                                        <img fetch class="blur-up img-responsive lazyautosizes lazyloaded" src="<?php echo $thumbnail; ?>"
+                                            alt="<?php echo $alt; ?>" title="<?php echo $alt; ?> " fetchpriority="high">
                                         <div class="halim-trending-rating">
                                             <div class="halim-trending-rating-value">
                                                 <?php echo halim_rate($post_id); ?>

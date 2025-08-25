@@ -2,6 +2,8 @@
 // Include file widget
 include_once get_stylesheet_directory() . '/includes/widgets/child-halim-popular-tab-widget.php';
 include_once get_stylesheet_directory() . '/includes/widgets/chill-halim-carousel.php';
+include_once get_stylesheet_directory() . '/includes/widgets/halim-advanced-widget-child.php';
+
 
 /**
  * Ghi đè widget parent và đăng ký widget child
@@ -17,6 +19,7 @@ function child_override_parent_widget()
     }
     // Đăng ký widget child
     register_widget('child_halim_tab_popular_Widget');
+    register_widget('HaLim_Advanced_Widget_Child');
     register_widget('HaLim_Carousel_Slider_Widget_Chill');
 }
 add_action('widgets_init', 'child_override_parent_widget', 15);
