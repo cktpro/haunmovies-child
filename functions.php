@@ -8,8 +8,23 @@ function haunmovies_child_enqueue_styles()
     // CSS của theme con (ghi đè theme cha)
     wp_enqueue_style('haunmovies-child-style', get_stylesheet_directory_uri() . '/style.css', array('haunmovies-style'), '1.0.8', 'all');
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', array(), '6.5.0');
-    wp_enqueue_style('template-2-style', get_stylesheet_directory_uri() . '/assets/css/movie-tpl2.css', array(), '1.6', 'all');
-    wp_enqueue_style('movie-style', get_stylesheet_directory_uri() . '/assets/css/top-movies.css', array(), '1.0.67', 'all');
+    wp_enqueue_style('template-2-style', get_stylesheet_directory_uri() . '/assets/css/movie-tpl2.css', array(), '1.7', 'all');
+    wp_enqueue_style('movie-style', get_stylesheet_directory_uri() . '/assets/css/top-movies.css', array(), '1.0.7', 'all');
+    wp_enqueue_style(
+        'toastify-css',
+        'https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css',
+        array(),
+        null
+    );
+
+    // JS Toastify
+    wp_enqueue_script(
+        'toastify-js',
+        'https://cdn.jsdelivr.net/npm/toastify-js',
+        array(), // có thể thêm ['jquery'] nếu cần
+        null,
+        true // load ở footer
+    );
 
 }
 add_action('wp_enqueue_scripts', 'haunmovies_child_enqueue_styles');
@@ -224,3 +239,53 @@ function mytheme_enqueue_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'mytheme_enqueue_scripts');
+add_action('wp_ajax_nopriv_filter_episode', 'my_filter_episode');
+
+function my_filter_episode()
+{
+    $keyword = isset($_POST['keyword']) ? sanitize_text_field($_POST['keyword']) : '';
+    $post_id = isset($_POST['post_id']) ? intval($_POST['post_id']) : 0;
+
+    if (empty($keyword) || !$post_id) {
+        wp_send_json_success(''); // Trả về rỗng
+    }
+
+    // Lấy meta _halimmovies
+    $meta_value = get_post_meta($post_id, '_halimmovies', true);
+    if (!$meta_value) {
+        wp_send_json_success('');
+    }
+
+    $episodes = json_decode($meta_value, true);
+    if (!$episodes) {
+        wp_send_json_success('');
+    }
+
+    $results = [];
+    foreach ($episodes as $server) {
+        foreach ($server['halimmovies_server_data'] as $ep) {
+            if (strpos($ep['halimmovies_ep_name'], $keyword) !== false) {
+                $results[] = $ep;
+            }
+        }
+    }
+
+    if (empty($results)) {
+        wp_send_json_success('');
+    }
+
+    // Render HTML trả về
+    ob_start();
+    foreach ($results as $ep) {
+        ?>
+        <div class="episode-item">
+            <a href="<?php echo esc_url($ep['halimmovies_ep_link']); ?>" target="_blank">
+                Tập <?php echo esc_html($ep['halimmovies_ep_name']); ?>
+            </a>
+        </div>
+        <?php
+    }
+    $html = ob_get_clean();
+
+    wp_send_json_success($html);
+}

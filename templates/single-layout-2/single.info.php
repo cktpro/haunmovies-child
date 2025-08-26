@@ -44,6 +44,7 @@ if ($trailer != '') {
 </script>
 <div class="halim-movie-wrapper tpl-2">
     <div class="movie_info col-xs-12">
+
         <?php
         $poster = isset($meta['halim_poster_url']) && $meta['halim_poster_url'] != '' ? $meta['halim_poster_url'] : halim_image_display('full');
         $check = isset($meta['halim_movie_status']) ? $meta['halim_movie_status'] : '';
@@ -212,7 +213,7 @@ if ($trailer != '') {
                 data-action="follow" data-placement="right" data-post_id="<?php echo $post->ID; ?>"
                 data-thumbnail="<?php echo esc_url(halim_image_display()) ?>" data-href="<?php the_permalink(); ?>"
                 data-title="<?php echo $post->post_title; ?>" data-date="<?php echo $date; ?>">
-                <i class="fa-solid fa-bookmark"></i> Theo dõi
+                <i class="fa-solid fa-bookmark"></i>
             </div>
             <!-- <div class="follow-btn">Theo Dõi</div> -->
 
@@ -222,7 +223,15 @@ if ($trailer != '') {
 
 
 <div id="halim_trailer"></div>
-
+<div class="filter-episode ">
+    <div>
+        <span><i class="hl-search"></i> Tìm tập nhanh <i class="hl-angle-down"></i></span> <span
+            class="list-episode-filter" id="list_episode_filter"> <input id="keyword-ep" name="q" type="text"
+                autocomplete="off" placeholder="Nhập số tập"> </span>
+        <!-- <img id="loading-ep" style="display: none;" src="/wp-content/themes/haunmovies/assets/images/ajax-loader.gif"> -->
+    </div>
+    <ul id="suggestions-ep" style="display: none;"></ul>
+</div>
 <div class="collapse <?php echo cs_get_option('episode_list_display') == 'visible' ? 'in' : 'in'; ?>" id="collapseEps">
     <?php
 
@@ -285,11 +294,11 @@ if (comments_open() || get_comments_number()): ?>
         <div class="movie-rating-modal-header">
             <button class="movie-rating-modal-close close-modal-rating">✕</button>
             <h2 class="movie-rating-movie-title"> <?php the_title() ?></h2>
-            <div class="movie-rating-movie-rating">
+            <!-- <div class="movie-rating-movie-rating">
                 <span class="movie-rating-rating-icon">★</span>
                 <span><span class="total-rating">0</span> / <span class="total-vote">0</span> lượt đánh
                     giá</span>
-            </div>
+            </div> -->
         </div>
         <div class="movie-rating-modal-body">
             <h3 class="movie-rating-rating-title">Bạn đánh giá phim này thế nào?</h3>
