@@ -196,8 +196,9 @@ class HaLim_Advanced_Widget_Child extends WP_Widget
 										<figure><img class="blur-up img-responsive lazyautosizes lazyloaded" alt="<?php echo $alt; ?>"
 												title="<?php echo $alt; ?>" src="<?php echo $thumbnail; ?>">
 										</figure>
-										<span class="status"><?php echo $status ?></span><span
-											class="episode"><?php echo $episode ?></span>
+										<!-- <span class="status"><?php echo $status ?></span>
+										<span class="episode"><?php echo $episode ?></span> -->
+										<span class="status"><?php echo $episode . ' [4k]' ?></span>
 										<div class="icon_overlay">
 										</div>
 

@@ -5,7 +5,7 @@
     border-radius: 0 !important;
 }
 .movie_info .head .first {
-    width: 25%;
+    flex: 0.35;
     padding: 5px;
     background: #000;
 }
@@ -15,7 +15,7 @@
 }
 .movie_info .head .last {
     margin-left: 10px;
-    width: 81%;
+    flex: 0.65;
 }
 .movie_info .head .last > div {
     display: flex;
@@ -24,26 +24,39 @@
     padding: 6px;
 }
 .movie_info .head .last > div > div:first-child {
-    flex: 0.2;
+    flex: 3;
     color: #a7a7a7;
     font-weight: 700;
 }
+.movie_info .head .last > div > div:last-child {
+    justify-content: flex-start;
+    display: flex;
+    font-weight: 500;
+    flex: 7;
+    color: #a7a7a7;
+}
 @media (max-width: 576px) {
+    .movie_info .head {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .movie_info .head .last {
+        width: 100%;
+        margin-left: 0;
+    }
     .movie_info .head .last > div > div:first-child {
         display: none;
     }
-    .movie_info .head .last > div > div {
+    .movie_info .head .last > div > div:last-child {
+        flex: 1;
+    }
+    .movie_info .head .last,
+    .movie_info .head .first {
         flex: 1 !important;
     }
 }
-.info-movie .head .last > div > div:last-child {
-    font-weight: 500;
-    color: #a7a7a7;
-}
-
 .movie_info .head .last > div > div {
     padding: 10px 5px;
-    flex: 0.8;
     color: #a7a7a7;
 }
 .movie_name {
@@ -80,6 +93,7 @@
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
+    width: 100%;
     padding: 8px 12px;
 }
 .halim-star-rating {

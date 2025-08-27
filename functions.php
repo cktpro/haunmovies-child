@@ -8,7 +8,7 @@ function haunmovies_child_enqueue_styles()
     // CSS của theme con (ghi đè theme cha)
     wp_enqueue_style('haunmovies-child-style', get_stylesheet_directory_uri() . '/style.css', array('haunmovies-style'), '1.0.8', 'all');
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css', array(), '6.5.0');
-    wp_enqueue_style('template-2-style', get_stylesheet_directory_uri() . '/assets/css/movie-tpl2.css', array(), '1.7', 'all');
+    wp_enqueue_style('template-2-style', get_stylesheet_directory_uri() . '/assets/css/movie-tpl2.css', array(), '1.8', 'all');
     wp_enqueue_style('movie-style', get_stylesheet_directory_uri() . '/assets/css/top-movies.css', array(), '1.0.7', 'all');
     wp_enqueue_style(
         'toastify-css',

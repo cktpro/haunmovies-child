@@ -54,7 +54,7 @@ if ($trailer != '') {
         ?>
         <div class="head ah-frame-bg">
             <div class="first">
-                <img src="<?php echo halim_image_display('movie-thumb'); ?>" alt="<?php the_title() ?>">
+                <img src="<?php echo halim_image_display('full'); ?>" alt="<?php the_title() ?>">
             </div>
             <div class="last">
                 <div class="name">
