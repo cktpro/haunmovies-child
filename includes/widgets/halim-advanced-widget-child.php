@@ -181,8 +181,39 @@ class HaLim_Advanced_Widget_Child extends WP_Widget
 					if ($querys->have_posts()):
 						while ($querys->have_posts()):
 							$querys->the_post();
-							HaLimCore::display_post_items($layout);
-						endwhile;
+							$post_id = get_the_ID();
+							$title = get_the_title();
+							$permalink = get_permalink();
+							$thumbnail = get_the_post_thumbnail_url($post_id, 'full'); // size: medium, large, full
+							$alt = esc_attr($title);
+							$status = get_post_meta($post_id, '_halim_metabox_options', true)['halim_quality'] ?? 'Đang cập nhật';
+							$episode = get_post_meta($post_id, '_halim_metabox_options', true)['halim_episode'] ?? 'Tập mới nhất';
+							$org_title = get_post_meta($post_id, '_halim_metabox_options', true)['halim_original_title'] ?? '' ?>
+
+							<article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-<?php echo $post_id; ?>">
+								<div class="halim-item">
+									<a class="halim-thumb" href="<?php echo $permalink; ?>" title="<?php echo esc_attr($title); ?>">
+										<figure><img class="blur-up img-responsive lazyautosizes lazyloaded" data-sizes="auto"
+												alt="<?php echo $alt; ?>" title="<?php echo $alt; ?>" src="<?php echo $thumbnail; ?>">
+										</figure>
+										<span class="status"><?php echo $status ?></span><span
+											class="episode"><?php echo $episode ?></span>
+										<div class="icon_overlay">
+										</div>
+
+										<div class="halim-post-title-box">
+											<div class="halim-post-title ">
+												<h2 class="entry-title"><?php echo $title; ?></h2>
+												<p class="original_title">
+													<?php echo $org_title ?>
+												</p>
+											</div>
+										</div>
+									</a>
+								</div>
+							</article>
+							<!-- HaLimCore::display_post_items($layout); -->
+						<?php endwhile;
 						wp_reset_postdata();
 					endif;
 					echo '<div class="clearfix"></div>';
