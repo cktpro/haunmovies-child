@@ -193,8 +193,8 @@ class HaLim_Advanced_Widget_Child extends WP_Widget
 							<article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-<?php echo $post_id; ?>">
 								<div class="halim-item">
 									<a class="halim-thumb" href="<?php echo $permalink; ?>" title="<?php echo esc_attr($title); ?>">
-										<figure><img class="blur-up img-responsive lazyautosizes lazyloaded" data-sizes="auto"
-												alt="<?php echo $alt; ?>" title="<?php echo $alt; ?>" src="<?php echo $thumbnail; ?>">
+										<figure><img class="blur-up img-responsive lazyautosizes lazyloaded" alt="<?php echo $alt; ?>"
+												title="<?php echo $alt; ?>" src="<?php echo $thumbnail; ?>">
 										</figure>
 										<span class="status"><?php echo $status ?></span><span
 											class="episode"><?php echo $episode ?></span>
