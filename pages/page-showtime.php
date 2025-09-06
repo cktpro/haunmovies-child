@@ -84,16 +84,15 @@ get_header(); ?>
 						'posts_per_page' => $postnum,
 
 					);
-					if ($rand == 1) {
-						$args['tax_query'] = array(
-							array(
-								'taxonomy' => 'status',
-								'field' => 'slug',
-								'terms' => 'ongoing',
-								'operator' => 'IN'
-							)
-						);
-					}
+					$args['tax_query'] = array(
+						array(
+							'taxonomy' => 'status',
+							'field' => 'slug',
+							'terms' => 'ongoing',
+							'operator' => 'IN'
+						)
+					);
+
 					;
 					if ($type == 'popular') {
 						$args['orderby'] = 'meta_value_num';

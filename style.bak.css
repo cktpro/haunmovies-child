@@ -1,12 +1,22 @@
+/*
+ Theme Name:   HauNMovie Nulled Child
+ Theme URI:    https://hhkungfu3d.com
+ Description:  Child theme of HaunMovies
+ Author:       Roxone9
+ Author URI:   https://t.me/roxone9
+ Template:     haunmovies
+ Version:      1.1.0
+ Text Domain:  haunmovies-child
+*/
 body {
-    font-family: Montserrat, sans-serif !important;
+    font-family: 'Montserrat', sans-serif !important;
 }
-#footer,
-#footer .about,
-#footer .footer-logo,
+body.halimthemes,
 #header,
-.footer-credit,
-body.halimthemes {
+#footer,
+#footer .footer-logo,
+#footer .about,
+.footer-credit {
     background: #1c1c1c !important;
 }
 #headwrap .nav-items a,
@@ -26,8 +36,8 @@ body.halimthemes {
     justify-content: center;
     align-items: center;
 }
-.main-navigation,
-.navbar-container:has(.main-navigation) {
+.navbar-container:has(.main-navigation),
+.main-navigation {
     background: #1f2021;
     box-shadow: unset;
 }
@@ -44,9 +54,12 @@ body.halimthemes {
 .halim_box .grid-item {
     padding: 5px;
 }
-#sidebar .item:hover img,
 .grid-item:hover img,
+#sidebar .item:hover img,
 .popular-post .item:hover img {
+    /* disble transform */
+    /* transform: scale(1.1); */
+    /* transition: all 0.3s ease-in-out; */
     transform: unset !important;
     transition: unset !important;
 }
@@ -57,13 +70,17 @@ body.halimthemes {
     left: 0;
     width: 100%;
     height: 100%;
+    /* background: #000 url(assets/images/play-icon.png) no-repeat center center; */
+    /* background-size: 30px; */
     opacity: 0;
     transition: unset !important;
 }
+
 .grid-item:hover .icon_overlay,
 .slider-thumb:hover .icon_overlay {
     opacity: 0 !important;
 }
+/* .halim-showtime media screen min width 970  */
 @media screen and (min-width: 990px) {
     .halim-showtime {
         min-height: 100vh;
@@ -121,33 +138,41 @@ body.halimthemes {
 .halim-showtime .schedule-menu .schedule-item a {
     color: #ccc;
 }
+
+/* Carousel */
 .owl-nav.disabled button {
     display: none;
 }
+
 .custom-carousel {
     margin-bottom: 36px;
 }
+
 .custom-carousel .owl-carousel .owl-nav {
     display: none;
 }
+
 .custom-carousel .grid-item figure {
     position: relative;
-    aspect-ratio: 3/4;
+    aspect-ratio: 3 / 4;
 }
+
 .custom-carousel .grid-item .halim-post-title-box {
     position: unset;
     padding: 0;
     height: 70px;
     display: flex;
     align-items: center;
-    background: 0 0 !important;
+    background: transparent !important;
     padding-top: 0 !important;
 }
+
 .custom-carousel .grid-item .halim-post-title-box {
     position: unset;
     padding: 0;
     height: 70px;
 }
+
 .custom-carousel .grid-item .halim-post-title-box .number {
     line-height: 1;
     font-size: 3.5em;
@@ -165,17 +190,21 @@ body.halimthemes {
     align-items: center;
     justify-content: center;
 }
+
 .custom-carousel .grid-item .halim-post-title-box .halim-post-title {
     position: unset;
 }
+
 .custom-carousel .grid-item .halim-post-title h2 {
     font-size: 14px !important;
     line-height: 1;
     font-weight: 700;
 }
+
 .custom-carousel .grid-item .halim-post-title .original_title {
     color: #9ca3af;
 }
+
 .custom-carousel .grid-item figure .episode {
     right: 10px;
     bottom: 10px;
@@ -186,6 +215,7 @@ body.halimthemes {
     font-size: 14px;
     font-weight: 700;
 }
+
 .custom-carousel .grid-item .clip-path-odd {
     -webkit-clip-path: polygon(
         94.239% 100%,
@@ -290,6 +320,7 @@ body.halimthemes {
         94.239% 100%
     );
 }
+
 .custom-carousel .grid-item .clip-path-even {
     -webkit-clip-path: polygon(
         5.761% 100%,
@@ -394,6 +425,7 @@ body.halimthemes {
         5.761% 100%
     );
 }
+
 .custom-carousel .grid-item .halim-trending-poster-mask {
     position: absolute;
     top: 0;
@@ -404,14 +436,17 @@ body.halimthemes {
     z-index: 1;
     transition: background-color 0.3s ease;
 }
+
 .custom-carousel .grid-item figure:hover .halim-trending-poster-mask {
     background-color: rgb(255 193 7 / 0.1);
 }
+
 .custom-carousel .grid-item figure img {
     height: 100%;
     max-height: 100%;
     object-fit: cover;
 }
+
 .custom-carousel span.rate {
     right: 10px;
     bottom: 80px;
@@ -459,10 +494,12 @@ body.halimthemes {
         width: 45px;
         font-size: 38px;
     }
+
     .custom-carousel .grid-item .halim-post-title-box .halim-post-title {
         padding-left: 4px;
     }
 }
+/* Post item  */
 .popular-post .item {
     clear: both;
     margin: 1px 0;
@@ -472,10 +509,11 @@ body.halimthemes {
     overflow: hidden;
     background: #0b0f15;
     background-size: 200% 100%;
-    background-image: linear-gradient(to right, #1e1e24 0, #0c0c0e 51%, #060808 50%);
+    background-image: linear-gradient(to right, #1e1e24 0%, #0c0c0e 51%, #060808 50%);
     transition: 0.8s;
     position: relative;
 }
+/* Page Num */
 .page-numbers li a,
 .page-numbers li span.current,
 .page-numbers li span.dots {
@@ -489,98 +527,6 @@ body.halimthemes {
 .page-numbers li a {
     background: #333 !important;
 }
+/* Form Login */
 
 /* Toast */
-.toastify {
-    z-index: 99999 !important;
-    position: fixed;
-    border-radius: 5px;
-    padding: 12px 15px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-/* Lớp bao bọc nội dung để căn chỉnh tốt hơn */
-.toast-content-wrapper {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    gap: 10px;
-}
-
-/* Style cho icon */
-.toast-icon {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 24px;
-    height: 24px;
-    font-weight: bold;
-    color: white;
-    font-size: 18px;
-    flex-shrink: 0;
-}
-
-.toast-icon-warning {
-    color: white;
-}
-.toast-icon-success {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
-}
-.toast-icon-info {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
-}
-.toast-icon-error {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
-}
-
-/* Style cho text thông báo */
-.toast-text {
-    color: white;
-    flex-grow: 1;
-}
-
-/* Style cho nút đóng */
-.toast-close-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    margin-left: 10px;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
-    flex-shrink: 0;
-}
-
-.toast-close-button:hover {
-    opacity: 1;
-}
-
-/* Style cho timeline chạy  */
-.toastify-timeline::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
-    animation: toastify-timeline-progress 3s linear forwards;
-    transform-origin: left;
-}
-
-@keyframes toastify-timeline-progress {
-    from {
-        transform: scaleX(1);
-    }
-    to {
-        transform: scaleX(0);
-    }
-}

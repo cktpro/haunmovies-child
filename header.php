@@ -79,28 +79,28 @@
                     <div class="nav-items flex-wrap flex">
                         <a href="/history" title="Lịch sử xem">
                             <div>
-                            <i class="hl-clock"></i>
+                            <i class="fa-solid fa-clock-rotate-left"></i>
                             </div>
                         </a>
-                        <a href="/bookmark" title="Bookmark" class="get-bookmark-on-mobile">
+                        <a href="/bookmark" title="Bookmark" >
                             <div>
-                            <i class="hl-bookmark"></i>
+                            <i class="fa-solid fa-bookmark"></i>
                             </div>
                         </a>
                         <div class="nav-menu-user">
                         <?php if ( is_user_logged_in() ) : ?>
     <!-- Nội dung khi user đã đăng nhập -->
     <a href="<?php echo wp_logout_url(home_url()); ?>">
-        
-        <i class="hl-off" style="color:red; "></i>
+        <i class="fa-solid fa-right-from-bracket" style="color:red; "></i>
+                        </a>
 <?php else : ?>
     <!-- Nội dung khi user chưa đăng nhập -->
-    <a href="javascript:void(0);" onclick="openLoginModal();">
-        <i class="hl-user" ></i>
+    <button  onclick="openLoginModal()">
+        <i class="fa-solid fa-user"></i>
 <?php endif; ?>
                             
                             
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
